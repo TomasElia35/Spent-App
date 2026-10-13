@@ -42,7 +42,7 @@ export default function AppShell({ tab, onTabChange, children }) {
   };
 
   return (
-    <div className="min-h-screen lg:pl-64">
+    <div className="min-h-screen min-h-[100dvh] lg:pl-64">
       {/* Sidebar (desktop) */}
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-slate-200/70 bg-white dark:border-slate-800 dark:bg-slate-900 lg:flex">
         <div className="px-5 py-6">
@@ -110,7 +110,7 @@ export default function AppShell({ tab, onTabChange, children }) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 pb-28 pt-4 sm:px-6 lg:px-8 lg:pb-10 lg:pt-8">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 pb-44 pt-4 sm:px-6 lg:px-8 lg:pb-10 lg:pt-8">{children}</main>
 
       {/* Bottom tabs (mobile) */}
       <nav className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-slate-200/70 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 lg:hidden">

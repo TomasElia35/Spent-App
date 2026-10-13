@@ -160,7 +160,7 @@ export default function AgendaPage() {
 
           <Card className="min-w-0 xl:col-span-3">
             <CardHeader
-              title={<span className="capitalize">{weekTitle}</span>}
+              title={<span className="cap-first">{weekTitle}</span>}
               subtitle={weekSubtitle}
               icon={CalendarDays}
               actions={weekNav}
@@ -215,8 +215,8 @@ export default function AgendaPage() {
           <Card className="overflow-hidden">
             <div className="flex items-center justify-between gap-2 px-4 pt-4">
               <div className="min-w-0">
-                <p className="truncate text-base font-semibold capitalize text-slate-800 dark:text-slate-100">{weekTitle}</p>
-                <p className="text-xs text-slate-500">{weekSubtitle}</p>
+                <p className="truncate text-base font-semibold cap-first text-slate-800 dark:text-slate-100">{weekTitle}</p>
+                <p className="truncate text-xs text-slate-500">{weekSubtitle}</p>
               </div>
               {weekNav}
             </div>
@@ -253,7 +253,7 @@ export default function AgendaPage() {
           </Card>
 
           <Card>
-            <CardHeader title={<span className="capitalize">{longDayLabel(selected)}</span>} icon={CalendarDays} />
+            <CardHeader title={<span className="cap-first">{longDayLabel(selected)}</span>} icon={CalendarDays} />
             <div className="space-y-2 p-4">
               {error ? (
                 <ErrorState message={error} onRetry={() => reload()} />
@@ -278,7 +278,7 @@ export default function AgendaPage() {
               setEditing(null);
               setSheetOpen(true);
             }}
-            className="fixed bottom-24 right-4 z-20 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-600/30 active:scale-95"
+            className="fab-pos fixed right-4 z-20 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-600/30 active:scale-95"
             aria-label="Nuevo compromiso"
           >
             <Plus className="h-6 w-6" />

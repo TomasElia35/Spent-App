@@ -26,7 +26,7 @@ export default function Modal({ open, onClose, title, children, size = 'md', foo
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4" role="dialog" aria-modal="true">
       <div className="absolute inset-0 animate-fade-in bg-slate-900/50 backdrop-blur-sm" onClick={onClose} />
       <div
-        className={`relative flex max-h-[92vh] w-full flex-col rounded-t-3xl bg-white shadow-2xl animate-slide-up dark:bg-slate-900 sm:rounded-2xl sm:animate-scale-in ${width}`}
+        className={`relative flex max-h-[92vh] max-h-[92dvh] w-full flex-col rounded-t-3xl bg-white shadow-2xl animate-slide-up dark:bg-slate-900 sm:rounded-2xl sm:animate-scale-in ${width}`}
       >
         <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-slate-200 dark:bg-slate-700 sm:hidden" />
         {title && (

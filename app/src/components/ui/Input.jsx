@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 
 export function Field({ label, htmlFor, children, className = '', hint }) {
   return (
-    <div className={className}>
+    <div className={`min-w-0 ${className}`}>
       {label && (
         <label htmlFor={htmlFor} className="field-label">
           {label}
@@ -25,7 +25,7 @@ export const Textarea = forwardRef(function Textarea({ className = '', ...rest }
 
 export const Select = forwardRef(function Select({ className = '', children, ...rest }, ref) {
   return (
-    <div className="relative">
+    <div className="relative min-w-0">
       <select ref={ref} className={`input appearance-none pr-9 ${className}`} {...rest}>
         {children}
       </select>

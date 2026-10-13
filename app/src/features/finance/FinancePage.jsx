@@ -134,7 +134,7 @@ export default function FinancePage() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-2xl">Finanzas</h1>
-          <p className="text-sm capitalize text-slate-500 dark:text-slate-400">{monthLabel(month)}</p>
+          <p className="text-sm cap-first text-slate-500 dark:text-slate-400">{monthLabel(month)}</p>
         </div>
       </div>
 
@@ -273,7 +273,7 @@ export default function FinancePage() {
           <button
             type="button"
             onClick={openNew}
-            className="fixed bottom-24 right-4 z-20 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-600/30 active:scale-95"
+            className="fab-pos fixed right-4 z-20 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-600/30 active:scale-95"
             aria-label="Nuevo movimiento"
           >
             <Plus className="h-6 w-6" />

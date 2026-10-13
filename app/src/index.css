@@ -32,18 +32,53 @@
     @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400;
   }
   .input {
-    @apply block w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400
+    @apply block min-h-[44px] w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-800 sm:text-sm placeholder:text-slate-400
       transition-colors focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-emerald-500/15
       disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:bg-slate-800;
   }
   .input-sm {
-    @apply py-2 text-sm;
+    @apply min-h-[40px] py-2 text-base sm:text-sm;
+  }
+  /* Misma altura para text, select, fecha y hora (en iOS cada uno mide distinto) */
+  input.input,
+  select.input {
+    @apply h-12 sm:h-11;
+  }
+  input.input-sm,
+  select.input-sm {
+    @apply h-11 sm:h-10;
+  }
+  /* iOS Safari: los inputs de fecha/hora tienen ancho y alineación propios que
+     desbordan las grillas de 2 columnas y quedan centrados/desalineados. */
+  input[type='date'].input,
+  input[type='time'].input,
+  input[type='month'].input {
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: left;
+  }
+  input[type='date'].input::-webkit-date-and-time-value,
+  input[type='time'].input::-webkit-date-and-time-value,
+  input[type='month'].input::-webkit-date-and-time-value {
+    text-align: left;
+    margin: 0;
+  }
+  /* Solo la primera letra en mayúscula ("Octubre de 2026", no "Octubre De 2026") */
+  span.cap-first {
+    display: inline-block;
+  }
+  .cap-first::first-letter {
+    text-transform: uppercase;
   }
 }
 
 @layer utilities {
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* Botón flotante por encima de la barra inferior + zona segura de iOS */
+  .fab-pos {
+    bottom: calc(5.5rem + env(safe-area-inset-bottom));
   }
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;

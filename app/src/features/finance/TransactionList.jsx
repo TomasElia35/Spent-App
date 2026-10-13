@@ -26,7 +26,7 @@ export default function TransactionList({ items, editingId, onEdit, onDelete }) 
 
             <div className="min-w-0 flex-1">
               <div className="flex items-start justify-between gap-2">
-                <p className="min-w-0 truncate text-sm font-medium text-slate-800 dark:text-slate-100">{t.title}</p>
+                <p className="line-clamp-2 min-w-0 break-words text-sm font-medium sm:line-clamp-1 text-slate-800 dark:text-slate-100">{t.title}</p>
                 <p
                   className={`shrink-0 text-sm font-semibold tabular-nums sm:hidden ${
                     income ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-800 dark:text-slate-100'
